@@ -1,0 +1,10 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.padre{
+	background-color: orange;
+	margin: 40px;
+	padding: 20px;
+}
