@@ -1,0 +1,25 @@
+ul{
+	width: 180px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid green;
+}
+
+li{
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+}
+
+a{
+	color: #333;
+	display: block;
+	padding: .2em 0 .2em 1.5em;
+	text-decoration: none;
+	background: url() no-repeat 3px;
+}
+
+a:hover{
+	background: white url(https://www.google.com/search?q=que+es+google+keep&sxsrf=ALiCzsYkFjbL9bC9X82fkI-HpXxKjgaVIA:1664382205922&tbm=isch&source=iu&ictx=1&vet=1&fir=ioGXmV8xtWj2QM%252CEX6HwcbTynGbHM%252C%252Fm%252F0ryt3nv%253BEzflQlcI4TNBTM%252CuyTic12wCd4MOM%252C_%253BOWZNu4pAvzBArM%252CbxnNldjaarkR7M%252C_%253BLqiEt9o3JWZUTM%252CMm7pYACHtRJvmM%252C_%253BbaLuMx4RiD0UvM%252CM9E5Z64NeF3d5M%252C_%253BavIcHvJFmFMd-M%252CHpYETm27lfnjmM%252C_%253BE_3cjgEDc928rM%252Cs-_B1AQQV-MgyM%252C_&usg=AI4_-kQVncdnuuV1_Cwm9Ofy58029Gl6Ew&sa=X&ved=2ahUKEwiTz53x8rf6AhW8lmoFHXsbBrQQ_B16BAhNEAE#imgrc=ioGXmV8xtWj2QM) no-repeat 3px;
+}
