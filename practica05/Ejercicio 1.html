@@ -19,10 +19,10 @@
 		}
 
 		function cambiarColores(color){
-			let c = [].slice.call(document.getElementsByTagName("p")).forEach(element => {
-				console.log(element)
-				element.style.color = color
-			});
+			// let c = [].slice.call(document.getElementsByTagName("p")).forEach(element => {
+			// 	console.log(element)
+			// 	element.style.color = color
+			// });
 
 			// for(let index=0; index<c.length; index++){
 			// 	c[index].style.color = color
@@ -31,6 +31,21 @@
 			// c.forEach(element => {
 			// 	console.log(element)
 			// });
+			
+			let d = document.getElementsByTagName("p");
+			// let i = 0;
+			// for(let x in d){
+			// 	if(i < d.length){
+			// 		d[x].style.color = "blue";
+			// 		i++;
+			// 	}
+			// }
+
+			for(const x in d){
+				if(Object.prototype.hasOwnProperty.call(d, x)){
+					d[x].style.color = "blue"
+				}
+			}
 		}
 	</script>
 </head>
