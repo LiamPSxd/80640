@@ -5,11 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Practica 06</title>
+
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>	
 </head>
 
 <body>
-	<h1 class="" id="respuesta"></h1>
+	<h1 id="respuesta"></h1>
 
 	<form action="" method="post">
 		<input type="text" id="email" name="email" placeholder="email">
@@ -27,16 +28,17 @@
 				email: email,
 				password: password
 			})*/
+
 			let parametros = new URLSearchParams()
 			parametros.append("email", email)
-			parametros.append("password", password)
+			parametros.append("password", pass)
 			axios.post("http://localhost:4567", parametros)
 			.then(function(response){
-				console.log("Respuesta: " + error)
+				console.log("Respuesta: ", response)
 				document.getElementById("respuesta").innerHTML = response.data.msj + " " + response.data.email
 			})
 			.catch(function(error){
-				console.log("Error: " + error)
+				console.log("Error: ", error)
 			})
 		})
 	</script>
