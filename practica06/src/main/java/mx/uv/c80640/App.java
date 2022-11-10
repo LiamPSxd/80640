@@ -39,21 +39,27 @@ public class App
         get("/", (req, res) -> "hola");
 
         post("/", (req, res) ->{
-            System.out.println(req.queryParams("email") + " " + req.queryParams("password"));
-            System.out.println(req.body());
-            
-            JsonElement arbol = JsonParser.parseString(req.body());
-            JsonObject peticionCliente = arbol.getAsJsonObject();
-            System.out.print(peticionCliente.get("email"));
-            System.out.print(peticionCliente.get("password"));
-            System.out.print(arbol);
-            
-            res.status(200);
             JsonObject oRespuesta= new JsonObject();
             oRespuesta.addProperty("msj","hola");
-            // oRespuesta.addProperty("email", req.queryParams("email"));
-            oRespuesta.addProperty("email", peticionCliente.get("email").getAsString());
-            
+            //System.out.println(req.queryParams("email")+" "+ req.queryParams("password"));
+            //System.out.println(req.body());
+        
+            if(req.queryParams("email")!=null){
+                JsonObject urlString =new JsonObject();
+                urlString.addProperty("email", req.queryParams("email"));
+                urlString.addProperty("email", req.queryParams("password"));
+                oRespuesta.addProperty("email", req.queryParams("email"));
+            }else{
+                JsonObject peticionCliente = new JsonObject();
+                peticionCliente = JsonParser.parseString(req.body()).getAsJsonObject();
+                oRespuesta.addProperty("email", peticionCliente.get("email").getAsString());
+            }
+ 
+            // System.out.println(peticionCliente.get("email"));
+            // System.out.println(peticionCliente.get("password"));
+            // System.out.println(parser);
+
+            res.status(200);
             return oRespuesta;
         });
     }

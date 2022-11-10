@@ -13,9 +13,9 @@
 	<h1 id="respuesta"></h1>
 
 	<form action="" method="post">
-		<input type="text" id="email" name="email" placeholder="email">
-		<input type="text" id="password" name="password" placeholder="password">
-		<button id="enviar" type="button">enviar</button>
+		<input type="text" id="email" placeholder="email">
+		<input type="password" id="password" placeholder="password">
+		<button type="button" id="enviar">enviar</button>
 	</form>
 
 	<script>
@@ -24,19 +24,22 @@
 			//Aquí Inicia
 			let email = document.getElementById("email").value
 			let pass = document.getElementById("password").value
-			/*axios.post("http://localhost:4567", {
+			
+			axios.post("http://localhost:4567", {
 				email: email,
 				password: password
-			})*/
+			})
 
-			let parametros = new URLSearchParams()
+			/*let parametros = new URLSearchParams()
 			parametros.append("email", email)
 			parametros.append("password", pass)
-			axios.post("http://localhost:4567", parametros)
+			axios.post("http://localhost:4567", parametros)*/
+			
 			.then(function(response){
 				console.log("Respuesta: ", response)
 				document.getElementById("respuesta").innerHTML = response.data.msj + " " + response.data.email
 			})
+			
 			.catch(function(error){
 				console.log("Error: ", error)
 			})
